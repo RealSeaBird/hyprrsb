@@ -1,5 +1,41 @@
 #!/bin/bash
 
+#Part 2 launch flag
+if [[ "$1" == "-P2" ]]; then
+	echo "Installing Part 2"
+	sleep 1
+	mkdir ~/backup
+	mv .config ~/backup -r
+	mkdir ~/.config
+	cp dotfiles/alacritty ~/.config -r
+	cp dotfiles/cava ~/.config -r
+	cp dotfiles/eww ~/.config -r
+	cp dotfiles/fastfetch ~/.config -r
+	cp dotfiles/hypr ~/.config -r
+	cp dotfiles/nvim ~/.config -r
+	cp dotfiles/rofi ~/.config -r
+	cp dotfiles/waybar ~/.config -r
+	mkdir ~/Doc
+	cp assets/sysp ~/Doc -r
+	cp assets/Wallpapers ~ -r
+	cp assets/windows11-list-dark.rasi ~/.local/share/rofi/themes/windows11-list-dark.rasi
+	echo "Part 2 done installing"
+	sleep 1
+	echo "Would you like to reboot? Y/N"
+	read p2reboot
+	if [[ $p2reboot == "Y" ]]; then
+		echo "rebooting"
+		reboot
+	elif [[ $p2reboot == "N" ]]; then
+		echo "Exiting program"
+		exit 1
+	else
+		echo "??? No idea what the hell you just said ima asume ya said exit"
+		exit 1
+	fi
+
+#Main script
+
 echo "Haiii >:3"
 sleep 1
 echo "Wanna Install my theme? Y/N"
@@ -42,7 +78,7 @@ if [[ $instconf == "Y" ]]; then
 				echo "Installing dependencies"
 				sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 				sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-				sudo pacman -S --needed --noconfirm git base-devel alacritty hyprland sddm fastfetch rofi hyprpaper flatpak hyprlock pavucontrol pipewire btop cava neovim waybar noto-fonts-cjk papirus-icon-theme zsh hyprshot 
+				sudo pacman -S --needed --noconfirm git base-devel alacritty hyprland sddm fastfetch rofi hyprpaper flatpak hyprlock pavucontrol pipewire btop cava neovim waybar noto-fonts-cjk papirus-icon-theme zsh kitty
 				yay -S --noconfirm ttf-firacode-nerd hyfetch eww-bin
 				echo "Done installing shit time for dot files"
 				mkdir ~/backup
@@ -62,7 +98,9 @@ if [[ $instconf == "Y" ]]; then
 				cp assets/windows11-list-dark.rasi ~/.local/share/rofi/themes/windows11-list-dark.rasi
 				eww daemon
 				sudo systemctl enable sddm
-				echo "Its done dude want me to reboot for you? Y/N"
+				echo "TO INSTALL DOT FILES PLEASE RUN SCRIPT AGAIN WITH THE -P2 FLAG"
+				sleep 5
+				echo "want me to reboot for you? Y/N"
 				read rebootconf
 				if [[ $rebootconf == "Y" ]]; then
 					echo "Oke have fun I guess"
