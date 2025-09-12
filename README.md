@@ -11,3 +11,4 @@ Meow :3
 
 
 If this breaks your system blame yourself not me
+(README file still in alpha sorry)
