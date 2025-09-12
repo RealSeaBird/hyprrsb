@@ -33,6 +33,7 @@ if [[ "$1" == "-P2" ]]; then
 		echo "??? No idea what the hell you just said ima asume ya said exit"
 		exit 1
 	fi
+ fi
 
 #Main script
 
