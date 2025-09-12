@@ -42,7 +42,7 @@ if [[ $instconf == "Y" ]]; then
 				echo "Installing dependencies"
 				sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 				sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-				sudo pacman -S --needed --noconfirm git base-devel alacritty hyprland sddm fastfetch rofi hyprpaper flatpak hyprlock pavucontrol pipewire btop cava neovim waybar noto-fonts-cjk papirus-icon-theme zsh
+				sudo pacman -S --needed --noconfirm git base-devel alacritty hyprland sddm fastfetch rofi hyprpaper flatpak hyprlock pavucontrol pipewire btop cava neovim waybar noto-fonts-cjk papirus-icon-theme zsh hyprshot 
 				yay -S --noconfirm ttf-firacode-nerd hyfetch eww-bin
 				echo "Done installing shit time for dot files"
 				mkdir ~/backup
