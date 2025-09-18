@@ -1,0 +1,16 @@
+[General]
+LastUsedVersion=210800
+
+[MainWindow]
+MenuBar=Disabled
+
+[Recent Files]
+File1[$e]=$HOME/Downloads/mtf.png
+File2[$e]=$HOME/Doc/baka.mp4
+File3[$e]=$HOME/Doc/Caramel.mp4
+Name1[$e]=mtf.png
+Name2[$e]=baka.mp4
+Name3[$e]=Caramel.mp4
+
+[SideBar]
+InformationSplitterSizes=206,247
