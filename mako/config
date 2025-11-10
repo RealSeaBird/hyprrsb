@@ -1,0 +1,24 @@
+anchor=top-right
+margin=20
+padding=10
+width=350
+
+font=MesloLGS Nerd Font 11
+background-color=#1E1E2E
+border-color=#28283d
+border-size=2
+border-radius=5
+
+
+icons=1
+max-icon-size=48
+icon-location=left
+
+format=<b>%s</b>\n%b
+
+history=1
+max-history=5
+
+[urgency=critical]
+background-color=#8c274b
+border-color=#b52156
